@@ -1,4 +1,4 @@
-# Rudra Sharma's Portfolio Website
+# Rudra Sharma's Portfolio 😃
 
 This is a portfolio website that showcases my skills, projects, and hobbies as a second year BTech student in computer science and engineering at UPES. I specialize in full stack AI development and I'm passionate about learning new technologies and developing innovative solutions.
 
