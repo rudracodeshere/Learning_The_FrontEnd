@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Skranji&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="outer">
+        <div id="container">
+            <h1>Calculate Here!</h1>
+            <div id="screen">
+                <p id="output">-------------------------------------</p>
+            </div>
+            <button id="clear" onclick="clearit()">C</button>
+            <br>
+            <div class="row">
+                <button class="nums" value="7" onclick="printit(value)">7</button>
+                <button class="nums" value="8" onclick="printit(value)">8</button>
+                <button class="nums" value="9" onclick="printit(value)">9</button>
+                <button class="nums" value="*" onclick="printit(value)">*</button>
+            </div>
+            <br>
+            <div class="row">
+                <button class="nums" value="4" onclick="printit(value)">4</button>
+                <button class="nums" value="5" onclick="printit(value)">5</button>
+                <button class="nums" value="6" onclick="printit(value)">6</button>
+                <button class="nums" value="/" onclick="printit(value)">/</button>
+            </div>
+            <br>
+            <div class="row">
+                <button class="nums" value="1" onclick="printit(value)">1</button>
+                <button class="nums" value="2" onclick="printit(value)">2</button>
+                <button class="nums" value="3" onclick="printit(value)">3</button>
+                <button class="nums" value="+" onclick="printit(value)">+</button>
+            </div>
+            <br>
+            <div class="row">
+                <button class="nums" value="0" onclick="printit(value)">0</button>
+                <button class="nums" value="." onclick="printit(value)">.</button>
+                <button id="equal" onclick="equalsTo()">=</button>
+                <button class="nums" value="-" onclick="printit(value)">-</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

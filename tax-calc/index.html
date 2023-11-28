@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAX CALCULATOR</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="outer">
+        <h1>Calculate Your TAX!</h1>
+        <div id="container">
+            <div class="money">
+                <h3>BASE: </h3>
+                <input type="number" placeholder="Enter Here" class="input-values" id="base" value="1000000">
+            </div>
+            <div class="money">
+                <h3>HRA(%): </h3>
+                <input type="number" placeholder="Enter Here" class="input-values" id="hra" value="20">
+            </div>
+            <div class="money">
+                <h3>TA(%): </h3>
+                <input type="number" placeholder="Enter Here" class="input-values" id="ta"value="10">
+            </div>
+            <div class="money">
+                <h3>DA(%): </h3>
+                <input type="number" placeholder="Enter Here" class="input-values" id="da" value="5">
+            </div>
+            <div id="genders">
+                <label for="man">
+                    <input type="radio" value="male" name="gender" class="gender-check" id="man">Male
+                </label>
+                <label for="woman">
+                    <input type="radio" value="female" name="gender" class="gender-check" id="woman">Female
+                </label>
+            </div>
+            <div id="main-button">
+                <br>
+                <button id="btn">Calculate</button>
+            </div>
+            <div class="para">
+            <p id="result"></p>
+        </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

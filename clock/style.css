@@ -1,0 +1,19 @@
+#container{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background-color: bisque;
+    border: 2px solid black;
+}
+#curr-time{
+    margin-left: 1%;
+    padding: 1%;
+    font-size: 2em;
+    text-align: center;
+    background-color: beige;
+    border: 2px solid black;
+    }
+    body {
+        background-image: url("https://i.pinimg.com/originals/50/1d/49/501d49dc37935dc5c1fa42a676f785de.gif");
+        background-size: cover;
+    }

@@ -1,0 +1,392 @@
+<html>
+
+<head>
+    <title>Invoice</title>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            color: #333333;
+        }
+
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            border: 1px solid #cccccc;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        td {
+            background-color: #ffffff;
+            color: #666666;
+        }
+
+        #total {
+            font-weight: bold;
+            color: #333333;
+        }
+
+        #shop-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        #submit,
+        #add {
+            display: block;
+            width: 100px;
+            height: 40px;
+            margin: 20px auto;
+            border: none;
+            border-radius: 5px;
+            background-color: black;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Invoice Generator</h1>
+    <form id="form">
+        <table id="table">
+            <tr>
+                <th>Customer Name</th>
+                <td><input type="text" id="name" required></td>
+            </tr>
+            <tr id="products">
+                <th>Products</th>
+                <td id="products-list">
+                    <div class="product">
+                        <label for="product">Product:</label>
+                        <input type="text" id="product" required>
+                        <label for="price">Price:</label>
+                        <input type="number" id="price" min="0" required>
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" min="1" required>
+                    </div>
+                </td>
+            </tr>
+            <tr id="total-row">
+                <th>Total</th>
+                <td id="total">0</td>
+            </tr>
+        </table>
+        <button type="button" id="add">Add Product</button>
+        <button type="submit" id="submit">Generate Invoice</button>
+    </form>
+    <script>
+        // Get the form element
+        var form = document.getElementById("form");
+
+        // Get the add product button
+        var add = document.getElementById("add");
+
+        // Add an event listener to the add product button
+        add.addEventListener("click", function () {
+            // Get the products list element
+            var productsList = document.getElementById("products-list");
+
+            // Create a new product div element
+            var productDiv = document.createElement("div");
+            productDiv.className = "product";
+
+            // Create the product input elements
+            var productLabel = document.createElement("label");
+            productLabel.setAttribute("for", "product");
+            productLabel.innerHTML = "Product:";
+
+            var productInput = document.createElement("input");
+            productInput.type = "text";
+            productInput.id = "product";
+            productInput.required = true;
+
+            var priceLabel = document.createElement("label");
+            priceLabel.setAttribute("for", "price");
+            priceLabel.innerHTML = "Price:";
+
+            var priceInput = document.createElement("input");
+            priceInput.type = "number";
+            priceInput.id = "price";
+            priceInput.min = "0";
+            priceInput.required = true;
+
+            var quantityLabel = document.createElement("label");
+            quantityLabel.setAttribute("for", "quantity");
+            quantityLabel.innerHTML = "Quantity:";
+
+            var quantityInput = document.createElement("input");
+            quantityInput.type = "number";
+            quantityInput.id = "quantity";
+            quantityInput.min = "1";
+            quantityInput.required = true;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // Append the input elements to the product div element
+            productDiv.appendChild(productLabel);
+            productDiv.appendChild(productInput);
+            productDiv.appendChild(priceLabel);
+            productDiv.appendChild(priceInput);
+            productDiv.appendChild(quantityLabel);
+            productDiv.appendChild(quantityInput);
+
+            // Append the product div element to the products list element
+            productsList.appendChild(productDiv);
+
+        });
+
+        // Add an event listener to the form submit
+        form.addEventListener("submit", function (event) {
+            // Prevent the default form submission
+            event.preventDefault();
+
+            // Get the input values
+            var name = document.getElementById("name").value;
+            var products = document.getElementsByClassName("product");
+
+            // Initialize the total and the invoice items array
+            var total = 0;
+            var invoiceItems = [];
+
+            // Loop through the products and calculate the subtotal and push the item to the invoice items array
+            for (var i = 0; i < products.length; i++) {
+                var product = products[i].querySelector("#product").value;
+                var price = products[i].querySelector("#price").value;
+                var quantity = products[i].querySelector("#quantity").value;
+                var subtotal = price * quantity;
+                total += subtotal;
+                invoiceItems.push({ product: product, price: price, quantity: quantity, subtotal: subtotal });
+            }
+
+            // Display the total in the table
+            document.getElementById("total").innerHTML = total;
+
+            // Create a new window for the invoice
+            var invoiceWindow = window.open("", "Invoice", "width=600,height=800");
+
+            // Create the invoice HTML
+            var invoiceHTML = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <style>
+            body {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background-color: #333333;
+            }
+            /* Use a white and elegant font for the title */
+            h1 {
+                text-align: center;
+                font-size: 36px;
+                font-weight: bold;
+                color: #ffffff;
+            }
+            /* Use a minimalist and contrast table design */
+            table {
+                border-collapse: collapse;
+                width: 80%;
+                margin: 0 auto;
+                box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            }
+            th, td {
+                border: 1px solid #ffffff;
+                padding: 10px;
+            }
+            th {
+                background-color: #333333;
+                color: #ffffff;
+            }
+            td {
+                background-color: #444444;
+                color: #cccccc;
+                text-align: center;
+            }
+            /* Use a bright and bold font for the total */
+            #total {
+                font-weight: bold;
+                color: #00aaff;
+            }
+            /* Use a small and round logo for the shop */
+            #shop-logo {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+            }
+            /* Use a gradient and rounded button design */
+            #submit, #add {
+                display: block;
+                width: 100px;
+                height: 40px;
+                margin: 20px auto;
+                border: none;
+                border-radius: 5px;
+                background-image: linear-gradient(to right, #00aaff, #00ffaa); /* Use a green-blue gradient for the buttons */
+                color: #ffffff; /* Use a white color for the button text */
+            }
+        </style>
+        </head>
+        <body id="invoice">
+            <h1>Invoice</h1>
+            <table>
+                <tr>
+                    <th colspan="2">Shop Details</th>
+                </tr>
+                <tr>
+                    <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThQn2FvPgfVfW8PHyopdIAdb2G3V2Ek2FCxopa7Cedc8BVGi0FsvyV7aVZbzQVcBV5zKc&usqp=CAU" id="shop-logo" alt="Shop Logo"></td>
+                    <td>
+                        <p>Shop Name: ABC Store</p>
+                        <p>Shop Address: UPES, Uttarakhand, India</p>
+                        <p>Shop Contact Number: +91-1234567890</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2">Customer Details</th>
+                </tr>
+                <tr>
+                    <td colspan="2">Customer Name: ${name}</td>
+                </tr>
+                <tr>
+                    <th colspan="4">Product Details</th>
+                </tr>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>`;
+
+            // Loop through the invoice items and append them to the invoice HTML
+            for (var i = 0; i < invoiceItems.length; i++) {
+                var item = invoiceItems[i];
+                invoiceHTML += `
+            <tr>
+                <td>${item.product}</td>
+                <td>${item.price}</td>
+                <td>${item.quantity}</td>
+                <td>${item.subtotal}</td>
+            </tr>`;
+            }
+
+            // Append the total row and close the table tag
+            invoiceHTML += `
+            <tr id="total-row">
+                <th colspan="3">Total</th>
+                <td id="total">${total}</td>
+            </tr>
+
+        </table>
+
+    </body>
+
+    </html>
+
+    
+    `;
+
+            // Write the invoice HTML to the new window
+            invoiceWindow.document.write(invoiceHTML);
+
+
+        });
+    </script>
+
+
+</body>
+
+</html>
