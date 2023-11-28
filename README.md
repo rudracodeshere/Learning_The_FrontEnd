@@ -18,9 +18,5 @@ This is a portfolio website that showcases my skills, projects, and hobbies as a
 ## Usage
 
 You can use this website to learn more about me, my skills, my projects, and my hobbies. Feel free to explore the website and enjoy!
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
 ```
 Hope You Like the Portfolio 😊
