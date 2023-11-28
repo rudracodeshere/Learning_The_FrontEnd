@@ -1,19 +1,19 @@
 #project {
     display: flex;
     background-color: #eee8aa;
-    width: 45.3%;
-
-    height: 2.87%;
+    width: 870px;
+    font-size: 15px;
+    height: 25px;
     border: 6px solid black;
     border-bottom: 3px solid black;
-
+   
     position: absolute;
     top: 63.3%;
     left: 25%;
     padding: 15px;
     align-items: center;
     border-top: 3px solid black;
-}
+    }
 
 #project h2 {
     margin-right: 20px;
@@ -29,11 +29,11 @@ a {
 }
 
 #project li {
-    padding-bottom: 0.69rem;
+    padding-bottom: 11px;
     list-style-type: none;
-    margin-right: 2rem;
+    margin-right: 30px;
     margin-left: 60px;
-    font-size: 1em;
+    font-size: 18px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     margin-top: 8px;
 }
@@ -51,7 +51,7 @@ body {
 #box {
     background-color: bisque;
     height: 228px;
-    width: 47.3%;
+    width: 900px;
     border: 6px solid black;
     border-bottom: 3px;
     border-radius: 10px;
@@ -71,14 +71,14 @@ body {
 }
 
 h2 {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 
 }
 
 #upper {
     background-color: palegoldenrod;
-    height: 224px;
-    width: 68.7%;
+    height: 225px;
+    flex-grow: 1;
     border-bottom: 3px solid black;
 
 }
@@ -86,14 +86,14 @@ h2 {
 #box2 {
     background-color: bisque;
     height: 120px;
-    width: 47.3%;
+    width: 900px;
     border: 6px solid black;
     border-top: none;
     /* border-radius: 10px; */
     position: absolute;
     left: 25%;
     border-bottom: 3px solid black;
-    bottom: 13.6%;
+    bottom: 18.0%;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     display: flex;
@@ -117,8 +117,8 @@ li {
     display: flex;
     flex-direction: column;
     background-color: papayawhip;
-    height: 30%px;
-    width: 47.3%;
+    height: 250px;
+    width: 900px;
     position: absolute;
     bottom: 36%;
     left: 25%;
@@ -143,25 +143,23 @@ li {
     text-align: center;
     font-size: 17PX;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding: 20px 10px 10px 10px;
+    padding: 35px 10px 10px 10px;
 }
 
 #footer {
     color: wheat;
     background-color: black;
-    width: 47.9%;
+    width: 911px;
     height: 20px;
     position: absolute;
-    top: 85%;
+    top: 82%;
     left: 25.05%;
     text-align: center;
 }
-
-li a {
+li a{
     transition: all 0.25s ease-in-out;
     color: rgb(56, 56, 142)
 }
-
 li a:hover {
-    font-size: 20px;
+   font-size: 20px;
 }
